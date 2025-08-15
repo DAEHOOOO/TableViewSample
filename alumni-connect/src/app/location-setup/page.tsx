@@ -71,10 +71,10 @@ export default function LocationSetupPage() {
       }
 
       const { error: locationError } = await supabase
-        .from('user_location')
-        .upsert({
+        .rpc('update_user_location', {
           user_id: user.id,
-          coord: `POINT(${longitude} ${latitude})`
+          lat: latitude,
+          lng: longitude
         })
 
       if (locationError) {

@@ -92,7 +92,7 @@ export default function DashboardPage() {
       <main className="max-w-4xl mx-auto px-4 py-8">
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {/* Find Candidates */}
-          <Card className="cursor-pointer hover:shadow-lg transition-shadow">
+          <Card className="cursor-pointer hover:shadow-lg transition-shadow" onClick={() => router.push('/discover')}>
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
                 <Users className="h-5 w-5 text-blue-600" />
@@ -103,7 +103,7 @@ export default function DashboardPage() {
               </CardDescription>
             </CardHeader>
             <CardContent>
-              <Button className="w-full">
+              <Button className="w-full" onClick={() => router.push('/discover')}>
                 동문 둘러보기
               </Button>
             </CardContent>
@@ -185,7 +185,7 @@ export default function DashboardPage() {
                 &ldquo;근처 동문 찾기&rdquo;를 클릭해서 첫 만남을 시작해보세요!
               </p>
               <div className="flex justify-center space-x-4">
-                <Button>
+                <Button onClick={() => router.push('/discover')}>
                   동문 찾기 시작
                 </Button>
                 <Button variant="outline">
